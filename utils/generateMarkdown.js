@@ -31,20 +31,39 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
+  ## License
+
+  ${data.license}
+
+  This project is licensed under the ${data.license} license.
+
   ## Table of Contents
+
   ${data.table}
 
   ## Description
+
   ${data.description}
 
   ## Dependencies
-  ${data.dependencies}
+
+  To install necessary dependencies, run the following command:
+
+  > ${data.dependencies}
 
   ## Usage
+
   ${data.usage}
 
-  ##
+  ## Contribution
 
+  ${data.contribution}
+
+  ## Tests
+
+  To run tests, run the following command:
+
+  > ${data.tests}
 `;
 }
 
