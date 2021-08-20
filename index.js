@@ -12,45 +12,37 @@ const questions = [
   },
   {
     type: "input",
-    message: "Provide a brief description of your project",
+    message:
+      "Provide a brief description of your project (motivation for building, problem(s) it solves, what did you learn, etc.)",
     name: "description",
   },
   {
     type: "input",
-    message: "What command(s) are required to install dependencies??",
+    message: "What steps and/or commands are required to install your project",
     name: "installation",
     default: "npm i",
   },
   {
     type: "input",
-    message: "Provide usage information for your project",
+    message: "Provide instructions on how to use your project",
     name: "usage",
   },
   {
     type: "input",
-    message: "Describe contribution guidelines for your project",
-    name: "contribution",
+    message: "What command should be used to run tests?",
+    name: "tests",
+    default: "npm run tests",
   },
   {
     type: "input",
-    message: "What command should be run for tests?",
-    name: "tests",
-    default: "npm run tests",
+    message: "Describe how someone can contribute to your project",
+    name: "contributing",
   },
   {
     type: "list",
     message: "What type of license is your project covered under?",
     name: "license",
-    choices: [
-      "GNU AGPLv3",
-      "GNU GPLv3",
-      "GNU LGPLv3",
-      "Mozilla Public License 2.0",
-      "Apache License 2.0",
-      "MIT License",
-      "Boost Software License 1.0",
-      "The Unlicense",
-    ],
+    choices: ["Apache 2.0", "BSD 3", "GNU GPL v3", "IBM", "MIT", "Mozilla", "PDDL"],
   },
   {
     type: "input",
@@ -65,16 +57,17 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(data) {
+  fs.writeFile("README.md", data, (error) => {
+    error ? console.log(error) : console.log("README file created!");
+  });
+}
 
 // TODO: Create a function to initialize app
 function init() {
   // present the user with questions
-  inquirer.prompt(questions).then((data) => {
-    const markdown = generateMarkdown(data);
-    fs.writeFile("README.md", markdown, (error) => {
-      error ? console.log(error) : console.log("File created!");
-    });
+  inquirer.prompt(questions).then((response) => {
+    writeToFile(generateMarkdown(response));
   });
 }
 // Function call to initialize app
