@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license != "None") {
-    return `## License
+    return `# License
     This project is licensed with ${license}.`;
   }
   return "";
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license != "None") {
-    return `## License Link`;
+    return `# License Link`;
     // return the actual link of the license
   }
   return "";
@@ -22,7 +22,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license != "None") {
-    return `## License Section`;
+    return `# License Section`;
     // return the actual link of the license
   }
   return "";
@@ -31,39 +31,53 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## License
 
-  ${data.license}
+  ## Table of Contents:
 
-  This project is licensed under the ${data.license} license.
 
-  ## Table of Contents
-
-  ${data.table}
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
 
   ## Description
 
   ${data.description}
 
-  ## Dependencies
+
+  ## Installation
 
   To install necessary dependencies, run the following command:
 
-  > ${data.dependencies}
+    ${data.installation}
+
 
   ## Usage
 
   ${data.usage}
 
+
   ## Contribution
 
   ${data.contribution}
+
 
   ## Tests
 
   To run tests, run the following command:
 
-  > ${data.tests}
+    ${data.tests}
+
+
+  ## Questions?
+
+  If you have any questions, please contact me.
+
+  GitHub: ${data.github}
+  Email: ${data.email}
 `;
 }
 

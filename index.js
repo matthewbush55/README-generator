@@ -12,18 +12,13 @@ const questions = [
   },
   {
     type: "input",
-    message: "What should go in the table of contents?",
-    name: "table",
-  },
-  {
-    type: "input",
     message: "Provide a brief description of your project",
     name: "description",
   },
   {
     type: "input",
-    message: "What command should be run for project dependencies?",
-    name: "dependencies",
+    message: "What command(s) are required to install dependencies??",
+    name: "installation",
     default: "npm i",
   },
   {
