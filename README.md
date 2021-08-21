@@ -14,7 +14,7 @@ This command-line application allows users to dynamically generate a README.md f
 
 ## Installation
 
-To generate the README.md file, first run `npm install` to install package dependencies. Then, run `npm index.js` to invoke the main application.
+To generate the README.md file, first run `npm install` to install package dependencies. Then, run `node index.js` to invoke the main application.
 
 ## Usage
 
