@@ -20,7 +20,7 @@ To generate the README.md file, first run `npm install` to install package depen
 
 ![Walkthrough](./assets/images/walkthrough.gif)
 
-First, run `node index.js` in the shell window to start the application. It will then prompt you to provide answwers to questions to be used in generating the README.md file. The application uses the `Inquirer` library to build answer objects and display those in their appropriate sections in the README as well as use markdown to style the README for a more visually appealing document. After the final question is answered, a file named "README.md" is generated using the `fs` library and saved into the project's root directory.
+First, run `node index.js` in the shell window to start the application. It will then prompt you to provide answers to questions that will be used to generate the README.md file. The application uses the `Inquirer` library to build answer objects and display those in their appropriate sections in the README as well as use markdown to style the README for a more visually appealing document. After the final question is answered, a file named "README.md" is generated using the `fs` library and saved into the project's root directory.
 
 Usage video instructions can also be found here: https://drive.google.com/file/d/1MPfLlBXeGibO0PmYQffk7qYSBHiBOEio/view
 
