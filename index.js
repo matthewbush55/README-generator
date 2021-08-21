@@ -42,7 +42,7 @@ const questions = [
     type: "list",
     message: "What type of license is your project covered under?",
     name: "license",
-    choices: ["Apache 2.0", "BSD 3", "GNU GPL v3", "IBM", "MIT", "Mozilla", "PDDL"],
+    choices: ["None", "Apache 2.0", "BSD 3", "GNU GPL v3", "IBM", "MIT", "Mozilla", "PDDL"],
   },
   {
     type: "input",

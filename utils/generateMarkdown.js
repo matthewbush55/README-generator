@@ -2,6 +2,8 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   switch (license) {
+    case "None":
+      return "";
     case "Apache 2.0":
       return `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
     case "BSD 3":
@@ -16,8 +18,6 @@ function renderLicenseBadge(license) {
       return `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`;
     case "PDDL":
       return `[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)](https://opendatacommons.org/licenses/pddl/)`;
-    default:
-      return "";
   }
 }
 
@@ -25,6 +25,8 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   switch (license) {
+    case "None":
+      return "";
     case "Apache 2.0":
       return "https://opensource.org/licenses/Apache-2.0";
     case "BSD 3":
@@ -39,8 +41,6 @@ function renderLicenseLink(license) {
       return "https://opensource.org/licenses/MPL-2.0";
     case "PDDL":
       return "https://opendatacommons.org/licenses/pddl/";
-    default:
-      return "";
   }
 }
 
@@ -53,7 +53,7 @@ function renderLicenseSection(license) {
   
   This project is licensed under [${license}](${licenseLink})`;
   }
-  return;
+  return "";
 }
 
 // TODO: Create a function to generate markdown for README
@@ -92,7 +92,7 @@ function generateMarkdown(data) {
 
   ## Tests
 
-  To run tests, run the following command:
+  To perform tests, run the following command:
 
     ${data.tests}
 
@@ -102,16 +102,16 @@ function generateMarkdown(data) {
 
   ## Contributing
   
-  > [Contributor Covenant](https://www.contributor-covenant.org/)
-  
-  ${data.contribution}
+  ${data.contributing}
 
+  > For more information on project contribution guidelines, please reference [Contributor Covenant](https://www.contributor-covenant.org/)
 
   ## Questions?
 
-  If you have any questions, please contact me.
+  If you have any questions, please feel free to reach out. Thanks!
 
   GitHub: https://github.com/${data.github}
+
   Email: ${data.email}
 `;
 }
